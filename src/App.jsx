@@ -12,7 +12,7 @@ function App() {
 
     const handleLoad = async () => {
       try {
-          const response = await axios.get('http://localhost:5000/loadMap', {
+          const response = await axios.get('https://map-editor-mauve.vercel.app/loadMap', {
               params: {
                   uName: userName,
                   mapSlotNum
@@ -28,7 +28,7 @@ function App() {
 
     const handleSave = async () => {
         try {
-            const response = await axios.post('http://localhost:5000/saveMap', {
+            const response = await axios.post('https://map-editor-mauve.vercel.app/saveMap', {
                 uName: saveUserName,
                 uPass: password,
                 mapSlotNum: saveMapSlotNum,
