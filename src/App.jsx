@@ -34,7 +34,7 @@ function App() {
 
   const handleSave = async () => {
     try {
-      const response = await axios.get(
+      const response = await axios.post(
         "https://map-editor-mauve.vercel.app/saveMap",
         {
           uName: saveUserName,
