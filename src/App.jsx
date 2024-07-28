@@ -14,7 +14,7 @@ function App() {
 
   const handleLoad = async () => {
     try {
-      const response = await axios.post(
+      const response = await axios.get(
         "https://map-editor-mauve.vercel.app/loadMap",
         {
           params: {
