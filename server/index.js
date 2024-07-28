@@ -52,10 +52,9 @@ app.get('/loadMap', async (req, res) => {
   let url;
 
   if (server === 'NA') {
-    console.log('server', server);
-    url = `http://3.145.15.34/api.php`;
+    url = `http://3.145.15.34/api.php/?method=xgen.stickarena.maps.get&username=${uName}&slot_id=${mapSlot}`;
   } else if (server === 'EU') {
-    url = `http://18.199.164.171/api.php`;
+    url = `http://18.199.164.171/api.php/?method=xgen.stickarena.maps.get&username=${uName}&slot_id=${mapSlot}`;
   } else if (server === 'XGEN') {
     url = `http://api.xgenstudios.com/?method=xgen.stickarena.maps.get&username=${uName}&slot_id=${mapSlot}`;
   } else {
@@ -64,11 +63,7 @@ app.get('/loadMap', async (req, res) => {
   }
 
   try {
-    const response = await axios.post(url, new URLSearchParams({
-      method: 'xgen.stickarena.maps.get',
-      username: uName,
-      slot_id: mapSlot
-    }), {
+    const response = await axios.get(url, {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       }
