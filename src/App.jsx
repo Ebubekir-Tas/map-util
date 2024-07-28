@@ -22,7 +22,7 @@ function App() {
           setMapData(response.data.mapData);
           setSaveMapSlotNum(mapSlotNum);
       } catch (error) {
-          alert('Map Load Failed', error);
+          alert('Map Load Failed');
       }
   };
 
@@ -40,7 +40,7 @@ function App() {
                 alert("successfully saved map to user: " + saveUserName)
             }
         } catch (error) {
-            alert('Map Save Failed', error);
+            alert('Map Save Failed');
         }
     };
 
