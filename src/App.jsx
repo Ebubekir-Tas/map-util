@@ -47,7 +47,7 @@ function App() {
     return (
         <div>
             <div>
-                <p>Load from Xgen account:</p>
+                <p>Load from SAPS account:</p>
                 <label>User Name: </label>
                 <input type="text" value={userName} onChange={(e) => setUserName(e.target.value)} />
             </div>
