@@ -15,8 +15,11 @@ function App() {
   const [isLoadDisabled, setIsLoadDisabled] = useState(false);
   const [isSaveDisabled, setIsSaveDisabled] = useState(false);
 
+  const [isFetching, setIsFetching] = useState(false);
+
   const handleLoad = async () => {
     try {
+      setIsFetching(true);
       const response = await axios.get(
         "https://map-editor-mauve.vercel.app/loadMap",
         {
@@ -32,6 +35,9 @@ function App() {
       setSaveMapSlotNum(mapSlotNum);
     } catch (error) {
       alert("Map Load Failed");
+    }
+    finally {
+      setIsFetching(false);
     }
   };
 
@@ -78,6 +84,7 @@ function App() {
     }
   };
 
+  if (isFetching) return <div>Loading User maps. If this takes a long time the user probably does not have a map saved, I will add error handling later.</div>
   return (
     <div>
       <div>
