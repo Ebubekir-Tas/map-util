@@ -12,6 +12,9 @@ function App() {
   const [loadServer, setLoadServer] = useState("NA");
   const [saveServer, setSaveServer] = useState("NA");
 
+  const [isLoadDisabled, setIsLoadDisabled] = useState(false);
+  const [isSaveDisabled, setIsSaveDisabled] = useState(false);
+
   const handleLoad = async () => {
     try {
       const response = await axios.get(
@@ -59,6 +62,22 @@ function App() {
     }
   };
 
+  const handleLoadClick = () => {
+    if (!isLoadDisabled) {
+      handleLoad();
+      setIsLoadDisabled(true);
+      setTimeout(() => setIsLoadDisabled(false), 2000);
+    }
+  };
+
+  const handleSaveClick = () => {
+    if (!isSaveDisabled) {
+      handleSave();
+      setIsSaveDisabled(true);
+      setTimeout(() => setIsSaveDisabled(false), 2000);
+    }
+  };
+
   return (
     <div>
       <div>
@@ -92,7 +111,9 @@ function App() {
         </select>
       </div>
       <div>
-        <button onClick={handleLoad}>Load</button>
+        <button onClick={handleLoadClick} disabled={isLoadDisabled}>
+          Load
+        </button>
       </div>
       <hr />
       <h4>Save to:</h4>
@@ -145,7 +166,9 @@ function App() {
         />
       </div>
       <div>
-        <button onClick={handleSave}>Save</button>
+        <button onClick={handleSaveClick} disabled={isSaveDisabled}>
+          Save
+        </button>
       </div>
     </div>
   );
