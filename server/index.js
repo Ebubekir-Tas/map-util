@@ -20,7 +20,7 @@ app.post('/saveMap', async (req, res) => {
   if (server === 'NA') {
     url = 'http://3.145.15.34/api.php';
   } else if (server === 'EU') {
-    url = 'http://18.199.164.171/api.php';
+    url = 'http://18.159.215.53/api.php';
   } else {
     res.status(400).send("Invalid server for saving!");
     return;
