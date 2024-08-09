@@ -4,15 +4,18 @@ Recreation of eedok's Map Util
 
 # Instructions:
 
-* Load the required map from an account from either NA, EU, or Xgen servers.
+* Load the required map from an account from either NA, EU, or Xgen servers from a specified map slot.
+* Through the same application authenticate your account from either the NA or EU server.
+* Optionally change map name and respawn timers or map data.
+* Login to Leo's NA or EU Private Server and save map to desired slot.
+
+To modify respawn timers directly through map data:
 * Expand Map Data and scroll down through the values until you find "&ws"
 * Right of "&ws" are weapon spawns. Each weapon has 4 values. First two are what I assume XY positions, 3rd is the value, 4th is the weapon spawn timer. If it says 20, it's 20 seconds.
 * Change respawn timers by modifying value in Map Data.
-* Through the same application authenticate your account from either the NA or EU server.
-* Optionally change map name and slot number, save it.
-* Login to Leo's EU Private Server and search up your XGen account you saved the map on.
 
 Future: in-browser Map Editor and UI modernization
+More QoL features and better UI
 
 # FAQ:
 
