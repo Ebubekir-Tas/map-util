@@ -59,7 +59,7 @@ function App() {
     try {
       setIsFetching(true);
       const response = await axios.get(
-        "/api/loadMap",
+        "https://map-editor-mauve.vercel.app/loadMap",
         {
           params: {
             uName: userName,
@@ -81,7 +81,7 @@ function App() {
   const handleSave = async () => {
     try {
       const response = await axios.post(
-        "/api/saveMap",
+        "https://map-editor-mauve.vercel.app/saveMap",
         {
           uName: saveUserName,
           uPass: password,
