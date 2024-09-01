@@ -18,9 +18,9 @@ app.post('/saveMap', async (req, res) => {
   let url;
 
   if (server === 'NA') {
-    url = 'http://3.145.15.34/api.php';
+    url = 'http://18.118.186.177/api.php';
   } else if (server === 'EU') {
-    url = 'http://18.159.215.53/api.php';
+    url = 'http://15.237.196.49/api.php';
   } else {
     res.status(400).send("Invalid server for saving!");
     return;
@@ -52,9 +52,9 @@ app.get('/loadMap', async (req, res) => {
   let url;
 
   if (server === 'NA') {
-    url = `http://3.145.15.34/api.php/?method=xgen.stickarena.maps.get&username=${uName}&slot_id=${mapSlot}`;
+    url = `http://18.118.186.177/api.php/?method=xgen.stickarena.maps.get&username=${uName}&slot_id=${mapSlot}`;
   } else if (server === 'EU') {
-    url = `http://18.199.164.171/api.php/?method=xgen.stickarena.maps.get&username=${uName}&slot_id=${mapSlot}`;
+    url = `http://15.237.196.49/api.php/?method=xgen.stickarena.maps.get&username=${uName}&slot_id=${mapSlot}`;
   } else if (server === 'XGEN') {
     url = `http://api.xgenstudios.com/?method=xgen.stickarena.maps.get&username=${uName}&slot_id=${mapSlot}`;
   } else {

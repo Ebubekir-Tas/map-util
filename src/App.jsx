@@ -155,8 +155,8 @@ function App() {
             value={loadServer}
             onChange={(e) => setLoadServer(e.target.value)}
           >
-            <option value="NA">NA: http://3.145.15.34</option>
-            <option value="EU">EU: http://18.199.164.171</option>
+            <option value="NA">NA: http://18.118.186.177</option>
+            <option value="EU">EU: http://15.237.196.49</option>
             <option value="XGEN">XGENSTUDIOS</option>
           </select>
         </div>
@@ -207,8 +207,8 @@ function App() {
             value={saveServer}
             onChange={(e) => setSaveServer(e.target.value)}
           >
-            <option value="NA">NA: http://3.145.15.34</option>
-            <option value="EU">EU: http://18.199.164.171</option>
+            <option value="NA">NA: http://18.118.186.177</option>
+            <option value="EU">EU: http://15.237.196.49</option>
           </select>
         </div>
         <div>
