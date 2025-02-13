@@ -18,7 +18,7 @@ app.post('/saveMap', async (req, res) => {
   let url;
 
   if (server === 'NA') {
-    url = 'http://18.118.186.177/api.php';
+    url = 'http://98.84.151.65/api.php';
   } else if (server === 'EU') {
     url = 'http://15.237.196.49/api.php';
   } else {
@@ -52,7 +52,7 @@ app.get('/loadMap', async (req, res) => {
   let url;
 
   if (server === 'NA') {
-    url = `http://18.118.186.177/api.php/?method=xgen.stickarena.maps.get&username=${uName}&slot_id=${mapSlot}`;
+    url = `http://98.84.151.65/api.php/?method=xgen.stickarena.maps.get&username=${uName}&slot_id=${mapSlot}`;
   } else if (server === 'EU') {
     url = `http://15.237.196.49/api.php/?method=xgen.stickarena.maps.get&username=${uName}&slot_id=${mapSlot}`;
   } else if (server === 'XGEN') {
