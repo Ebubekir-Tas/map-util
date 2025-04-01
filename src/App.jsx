@@ -1,101 +1,6 @@
 import { useState, useMemo } from "react";
 import axios from "axios";
 
-const UsernameUtil = () => {
-	const [server, setServer] = useState("NA");
-	const [username, setUsername] = useState("");
-	const [password, setPassword] = useState("");
-
-	const [newUsername, setNewUsername] = useState("");
-
-  const handleSubmit = () => {
-    if (newUsername.length < 3) {
-      alert("new username must be at least 3 chars");
-      return;
-    }
-  
-    const url =
-      server === "NA"
-        ? "api/api.php?method=xgen.users.changeName"
-        : "http://15.237.196.49/api.php?method=xgen.users.changeName";
-  
-    const params = new URLSearchParams({
-      username: username,
-      password: password,
-      new_username: newUsername
-    });
-  
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: params.toString(),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Server error: ${response.status}`);
-        }
-        return response.text(); // Or response.json() depending on what the server returns
-      })
-      .then((data) => {
-        console.log("Response data:", data);
-      })
-      .catch((error) => {
-        console.error("Fetch error:", error);
-      });
-  };
-  
-	return (
-		<div>
-			<p style={{ fontWeight: "600" }}>select server</p>
-			<p>current: {server}</p>
-			<button
-				onClick={() => {
-					setServer("NA");
-				}}
-			>
-				NA
-			</button>
-			<button
-				// EU currently disabled
-				disabled
-				onClick={() => {
-					setServer("EU");
-				}}
-			>
-				EU
-			</button>
-			<div>
-				<label>User Name: </label>
-				<input
-					type="text"
-					value={username}
-					onChange={(e) => setUsername(e.target.value)}
-				/>
-			</div>
-			<div>
-				<label>Password: </label>
-				<input
-					type="password"
-					value={password}
-					onChange={(e) => setPassword(e.target.value)}
-				/>
-			</div>
-			<div>
-				<label>Change User Name To: </label>
-				<input
-					type="text"
-					value={newUsername}
-					onChange={(e) => setNewUsername(e.target.value)}
-				/>
-			</div>
-
-			<button onClick={handleSubmit}>submit</button>
-		</div>
-	);
-};
-
 const MapUtil = () => {
 	const [userName, setUserName] = useState("");
 	const [saveUserName, setSaveUserName] = useState("");
@@ -348,8 +253,6 @@ const MapUtil = () => {
 };
 
 function App() {
-	const [util, setUtil] = useState("map");
-
 	return (
 		<div>
 			<p>select util</p>
@@ -362,7 +265,8 @@ function App() {
 			</button>
 			<button
 				onClick={() => {
-					setUtil("username");
+					navigator.clipboard.writeText("https://98.84.151.65/change-name.html");
+					alert('namechange util change to url: "https://98.84.151.65/change-name.html". Link has been copied to clipboard, paste in browser.')
 				}}
 			>
 				change username
@@ -370,7 +274,6 @@ function App() {
 
 			<div>
 				{util === "map" ? <MapUtil /> : <></>}
-				{util === "username" ? <UsernameUtil /> : <></>}
 			</div>
 		</div>
 	);
