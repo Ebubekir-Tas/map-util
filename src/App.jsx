@@ -258,7 +258,6 @@ function App() {
 			<p>select util</p>
 			<button
 				onClick={() => {
-					setUtil("map");
 				}}
 			>
 				map
@@ -273,7 +272,7 @@ function App() {
 			</button>
 
 			<div>
-				{util === "map" ? <MapUtil /> : <></>}
+				<MapUtil />
 			</div>
 		</div>
 	);
