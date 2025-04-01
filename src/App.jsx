@@ -16,7 +16,7 @@ const UsernameUtil = () => {
   
     const url =
       server === "NA"
-        ? "http://98.84.151.65/api.php?method=xgen.users.changeName"
+        ? "api/api.php?method=xgen.users.changeName"
         : "http://15.237.196.49/api.php?method=xgen.users.changeName";
   
     const params = new URLSearchParams({
@@ -58,6 +58,8 @@ const UsernameUtil = () => {
 				NA
 			</button>
 			<button
+				// EU currently disabled
+				disabled
 				onClick={() => {
 					setServer("EU");
 				}}
@@ -249,7 +251,7 @@ const MapUtil = () => {
 						onChange={(e) => setLoadServer(e.target.value)}
 					>
 						<option value="NA">NA: http://98.84.151.65</option>
-						<option value="EU">EU: http://15.237.196.49</option>
+						<option value="EU" disabled>EU: http://15.237.196.49</option>
 						<option value="XGEN">XGENSTUDIOS</option>
 					</select>
 				</div>
@@ -301,7 +303,7 @@ const MapUtil = () => {
 						onChange={(e) => setSaveServer(e.target.value)}
 					>
 						<option value="NA">NA: http://98.84.151.65</option>
-						<option value="EU">EU: http://15.237.196.49</option>
+						<option value="EU" disabled>EU: http://15.237.196.49</option>
 					</select>
 				</div>
 				<div>
