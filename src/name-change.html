@@ -77,6 +77,7 @@
         ? "https://98.84.151.65/api.php?method=xgen.users.changeName"
         : "http://15.237.196.49/api.php?method=xgen.users.changeName";
       
+      // Build the POST parameters
       const params = new URLSearchParams({
         username: username,
         password: password,
@@ -97,9 +98,11 @@
         return response.text();
       })
       .then(data => {
+	      alert('success');
         console.log("Response data:", data);
       })
       .catch(error => {
+	      alert('fail. contact the discord server.');
         console.error("Fetch error:", error);
       });
     });
