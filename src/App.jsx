@@ -155,7 +155,7 @@ const MapUtil = () => {
 						value={loadServer}
 						onChange={(e) => setLoadServer(e.target.value)}
 					>
-						<option value="NA">NA: http://98.84.151.65</option>
+						<option value="NA">NA: Playstickarena.com</option>
 						<option value="EU" disabled>EU: http://15.237.196.49</option>
 						<option value="XGEN">XGENSTUDIOS</option>
 					</select>
@@ -207,7 +207,7 @@ const MapUtil = () => {
 						value={saveServer}
 						onChange={(e) => setSaveServer(e.target.value)}
 					>
-						<option value="NA">NA: http://98.84.151.65</option>
+						<option value="NA">NA: Playstickarena.com</option>
 						<option value="EU" disabled>EU: http://15.237.196.49</option>
 					</select>
 				</div>
@@ -264,8 +264,8 @@ function App() {
 			</button>
 			<button
 				onClick={() => {
-					navigator.clipboard.writeText("https://98.84.151.65/change-name.html");
-					alert('namechange util change to url: "https://98.84.151.65/change-name.html". Link has been copied to clipboard, paste in browser.')
+					navigator.clipboard.writeText("https://playstickarena.com/change-name.html");
+					alert('namechange util change to url: "https://playstickarena.com/change-name.html". Link has been copied to clipboard, paste in browser.')
 				}}
 			>
 				change username
