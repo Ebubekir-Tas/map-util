@@ -30,7 +30,7 @@ app.post('/saveMap', async (req, res) => {
   if (server === 'NA') {
     url = 'https://playstickarena.com/api.php';
   } else if (server === 'EU') {
-    url = 'http://15.237.196.49/api.php';
+    url = 'https://stickarena.lol/api.php';
   } else {
     res.status(400).send("Invalid server for saving!");
     return;
@@ -64,7 +64,7 @@ app.get('/loadMap', async (req, res) => {
   if (server === 'NA') {
     url = `https://playstickarena.com/api.php/?method=xgen.stickarena.maps.get&username=${uName}&slot_id=${mapSlot}`;
   } else if (server === 'EU') {
-    url = `http://15.237.196.49/api.php/?method=xgen.stickarena.maps.get&username=${uName}&slot_id=${mapSlot}`;
+    url = `https://stickarena.lol/api.php/?method=xgen.stickarena.maps.get&username=${uName}&slot_id=${mapSlot}`;
   } else if (server === 'XGEN') {
     url = `http://api.xgenstudios.com/?method=xgen.stickarena.maps.get&username=${uName}&slot_id=${mapSlot}`;
   } else {

@@ -156,7 +156,7 @@ const MapUtil = () => {
 						onChange={(e) => setLoadServer(e.target.value)}
 					>
 						<option value="NA">NA: Playstickarena.com</option>
-						<option value="EU" disabled>EU: http://15.237.196.49</option>
+						<option value="EU">EU: https:/stickarena.lol</option>
 						<option value="XGEN">XGENSTUDIOS</option>
 					</select>
 				</div>
@@ -208,7 +208,7 @@ const MapUtil = () => {
 						onChange={(e) => setSaveServer(e.target.value)}
 					>
 						<option value="NA">NA: Playstickarena.com</option>
-						<option value="EU" disabled>EU: http://15.237.196.49</option>
+						<option value="EU">EU: https:/stickarena.lol</option>
 					</select>
 				</div>
 				<div>
